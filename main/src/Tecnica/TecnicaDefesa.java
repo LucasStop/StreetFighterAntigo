@@ -16,5 +16,6 @@ public class TecnicaDefesa extends Tecnica {
     @Override
     public void applyEffect(Personagem target) {
         System.out.println(getName() + " ativou uma defesa!");
+        // Implementar lógica de defesa (por exemplo, aumentar a defesa do alvo)
     }
 }
