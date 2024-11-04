@@ -63,7 +63,7 @@ public class TorneioMenu extends JFrame {
         panel.add(txtMaxParticipantes);
         panel.add(lblRodadas);
         panel.add(txtRodadas);
-        panel.add(new JLabel());
+        panel.add(new JLabel()); // Espacemento
         panel.add(btnCriar);
 
         setVisible(true);

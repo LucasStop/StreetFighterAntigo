@@ -42,7 +42,7 @@ public class Rotas {
 
             if (rs.next()) {
                 int id = rs.getInt("id");
-                String name = rs.getString("nome");  // Corrige o nome do campo no banco
+                String name = rs.getString("nome");
                 int age = rs.getInt("idade");
                 int strength = rs.getInt("forca");
                 int speed = rs.getInt("velocidade");
@@ -123,15 +123,15 @@ public class Rotas {
 
             if (rs.next()) {
                 int id = rs.getInt("id");
-                String name = rs.getString("nome");       // Nome do torneio
-                String type = rs.getString("tipo");       // Tipo do torneio (Individual ou Equipe)
-                String prize = rs.getString("premio");    // Prêmio do torneio
+                String name = rs.getString("nome");
+                String type = rs.getString("tipo");
+                String prize = rs.getString("premio");
                 int maxParticipants = rs.getInt("maxParticipantes");
 
                 Torneio torneio;
 
                 if (type.equalsIgnoreCase("Individual")) {
-                    int rounds = rs.getInt("rodadas");  // Campo específico para torneio individual
+                    int rounds = rs.getInt("rodadas");
                     torneio = new TorneioIndividual(name, prize, maxParticipants, rounds);
                 } else if (type.equalsIgnoreCase("Equipe")) {
                     torneio = new TorneioEquipe(name, prize, maxParticipants);
@@ -213,12 +213,12 @@ public class Rotas {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String name = rs.getString("nome");           // Nome da técnica
-                int power = rs.getInt("poder");               // Poder da técnica
-                int energyCost = rs.getInt("custoEnergia");   // Custo de energia da técnica
-                String type = rs.getString("tipo");           // Tipo da técnica
-                int cooldown = rs.getInt("cooldown");         // Tempo de recarga da técnica
-                String description = rs.getString("descricao"); // Descrição da técnica
+                String name = rs.getString("nome");
+                int power = rs.getInt("poder");
+                int energyCost = rs.getInt("custoEnergia");
+                String type = rs.getString("tipo");
+                int cooldown = rs.getInt("cooldown");
+                String description = rs.getString("descricao");
 
                 return new Tecnica(name, power, energyCost, type, cooldown, description);
             }

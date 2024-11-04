@@ -8,7 +8,7 @@ public class Personagem {
     private int strength;
     private int speed;
     private int life;
-    private int maxLife; // New attribute to set a max life
+    private int maxLife;
     private int level;
     private ArrayList<Tecnica.Tecnica> techniques;
 
@@ -18,7 +18,7 @@ public class Personagem {
         this.strength = strength;
         this.speed = speed;
         this.life = life;
-        this.maxLife = life; // Initialize max life to initial life value
+        this.maxLife = life;
         this.level = level;
         this.techniques = new ArrayList<>();
     }
@@ -52,24 +52,23 @@ public class Personagem {
     }
 
     public void applyDamage(int damage) {
-        if (damage < 0) return; // Ignore negative damage values
+        if (damage < 0) return;
         this.life -= damage;
-        if (this.life < 0) this.life = 0; // Ensure life doesn't go below 0
+        if (this.life < 0) this.life = 0;
     }
 
     public void heal(int heal) {
-        if (heal < 0) return; // Ignore negative healing values
+        if (heal < 0) return;
         this.life += heal;
-        if (this.life > this.maxLife) this.life = this.maxLife; // Ensure life doesn't exceed maxLife
+        if (this.life > this.maxLife) this.life = this.maxLife;
     }
 
     public void levelUp() {
         this.level++;
-        // Optionally, increase stats with each level-up
-        this.strength += 2; // Example increment for strength
-        this.speed += 1; // Example increment for speed
-        this.maxLife += 5; // Increase max life with level
-        this.life = this.maxLife; // Heal to max life on level-up
+        this.strength += 2;
+        this.speed += 1;
+        this.maxLife += 5;
+        this.life = this.maxLife;
     }
 
     public void addTechnique(Tecnica.Tecnica technique) {

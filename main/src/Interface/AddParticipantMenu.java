@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class AddParticipantMenu extends JFrame {
-    private Torneio tournament;
+    private Torneio tournament; // Reference to the current tournament
 
     public AddParticipantMenu() {
         setTitle("Add Participant");
@@ -69,7 +69,7 @@ public class AddParticipantMenu extends JFrame {
         panel.add(txtLife);
         panel.add(lblLevel);
         panel.add(txtLevel);
-        panel.add(new JLabel());
+        panel.add(new JLabel()); // Empty space
         panel.add(btnAdd);
 
         setVisible(true);
