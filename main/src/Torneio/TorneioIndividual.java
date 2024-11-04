@@ -12,20 +12,27 @@ public class TorneioIndividual extends Torneio {
 
     @Override
     public void startTournament() {
-        // Implementar lógica para iniciar o torneio individual
         System.out.println("Torneio individual " + this.getName() + " iniciado com " + this.rounds + " rodadas!");
+        for (int i = 1; i <= rounds; i++) {
+            if (participants.size() < 2) break;
+            System.out.println("Rodada " + i);
+            startRound(participants.get(i - 1), participants.get((i % participants.size())));
+        }
     }
 
     public Personagem startRound(Personagem personagem1, Personagem personagem2) {
-        // Implementar lógica para iniciar uma rodada entre dois participantes
-        // Exemplo de lógica: escolher um vencedor aleatório (ou baseado em algum critério)
-        System.out.println("Rodada entre " + personagem1.getName() + " e " + personagem2.getNome() + " iniciada!");
-        // Exemplo: o personagem1 vence sempre
-        return personagem1;
+        Personagem winner = (personagem1.getStrength() > personagem2.getStrength()) ? personagem1 : personagem2;
+        System.out.println("Vencedor da rodada: " + winner.getName());
+        return winner;
     }
 
-    public void declareWinner(Personagem winner) {
-        // Implementar lógica para declarar o vencedor individual
-        System.out.println("O vencedor do torneio individual é " + winner.getNome() + "!");
+    @Override
+    public void declareWinner() {
+        if (!participants.isEmpty()) {
+            Personagem winner = participants.get(0);
+            System.out.println("O vencedor do torneio individual é " + winner.getName() + "!");
+        } else {
+            System.out.println("Nenhum participante para declarar vencedor.");
+        }
     }
 }
