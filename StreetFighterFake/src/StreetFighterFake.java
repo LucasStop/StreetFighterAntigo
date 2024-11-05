@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Main {
+public class StreetFighterFake {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Torneio.Torneio de Equipe");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
