@@ -1,12 +1,14 @@
+package StreetFighterFake.src;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Database.DatabaseConnection;
 import Personagem.Personagem;
-import Torneio.Torneio;
-import Torneio.TorneioEquipe;
+import StreetFighterFake.src.Database.DatabaseConnection;
+import StreetFighterFake.src.Torneio.Torneio;
+import StreetFighterFake.src.Torneio.TorneioEquipe;
 import Torneio.TorneioIndividual;
 import Tecnica.Tecnica;
 
@@ -51,7 +53,6 @@ public class Rotas {
 
                 return new Personagem(name, age, strength, speed, life, level);
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -128,18 +129,15 @@ public class Rotas {
                 String prize = rs.getString("premio");
                 int maxParticipants = rs.getInt("maxParticipantes");
 
-                Torneio torneio;
+                TorneioIndividual torneioIndividual;
+                TorneioEquipe torneioEquipe;
 
                 if (type.equalsIgnoreCase("Individual")) {
                     int rounds = rs.getInt("rodadas");
-                    torneio = new TorneioIndividual(name, prize, maxParticipants, rounds);
-                } else if (type.equalsIgnoreCase("Equipe")) {
-                    torneio = new TorneioEquipe(name, prize, maxParticipants);
+                    torneioIndividual = new TorneioIndividual(name, prize, maxParticipants, rounds);
                 } else {
-                    throw new IllegalArgumentException("Tipo de torneio desconhecido: " + type);
+                    torneioEquipe = new TorneioEquipe(name, prize, maxParticipants);
                 }
-
-                return torneio;
             }
 
 

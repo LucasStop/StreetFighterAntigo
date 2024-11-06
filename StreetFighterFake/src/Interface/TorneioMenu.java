@@ -1,13 +1,11 @@
-package Interface;
+package StreetFighterFake.src.Interface;
 
-import Torneio.Torneio;
-import Torneio.TorneioEquipe;
-import Torneio.TorneioIndividual;
+import StreetFighterFake.src.Torneio.Torneio;
+import StreetFighterFake.src.Torneio.TorneioEquipe;
+import StreetFighterFake.src.Torneio.TorneioIndividual;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TorneioMenu extends JFrame {
     public TorneioMenu() {
@@ -18,53 +16,53 @@ public class TorneioMenu extends JFrame {
         JPanel panel = new JPanel(new GridLayout(6, 2));
         getContentPane().add(panel);
 
-        JLabel lblTipo = new JLabel("Tipo de Torneio:");
-        String[] tipos = {"Individual", "Equipe"};
-        JComboBox<String> tipoComboBox = new JComboBox<>(tipos);
+        JLabel lblType = new JLabel("Tipo de Torneio:");
+        String[] types = {"Individual", "Equipe"};
+        JComboBox<String> typeComboBox = new JComboBox<>(types);
 
         JLabel lblNome = new JLabel("Nome do Torneio:");
         JTextField txtNome = new JTextField();
 
-        JLabel lblPremio = new JLabel("Prêmio:");
-        JTextField txtPremio = new JTextField();
+        JLabel lblPrize = new JLabel("Prêmio:");
+        JTextField txtPrize = new JTextField();
 
-        JLabel lblMaxParticipantes = new JLabel("Máximo de Participantes:");
-        JTextField txtMaxParticipantes = new JTextField();
+        JLabel lblMaxParticipants = new JLabel("Máximo de Participantes:");
+        JTextField txtMaxParticipants = new JTextField();
 
-        JLabel lblRodadas = new JLabel("Rodadas (para Individual):");
-        JTextField txtRodadas = new JTextField();
+        JLabel lblRounds = new JLabel("Rodadas (para Individual):");
+        JTextField txtRounds = new JTextField();
 
-        JButton btnCriar = new JButton("Criar Torneio");
+        JButton btnCreate = new JButton("Criar Torneio");
 
-        btnCriar.addActionListener(e -> {
+        btnCreate.addActionListener(e -> {
             String nome = txtNome.getText();
-            String premio = txtPremio.getText();
-            int maxParticipantes = Integer.parseInt(txtMaxParticipantes.getText());
+            String prize = txtPrize.getText();
+            int maxParticipants = Integer.parseInt(txtMaxParticipants.getText());
             Torneio torneio;
 
-            if (tipoComboBox.getSelectedItem().equals("Individual")) {
-                int rodadas = Integer.parseInt(txtRodadas.getText());
-                torneio = new TorneioIndividual(nome, premio, maxParticipantes, rodadas);
+            if (typeComboBox.getSelectedItem().equals("Individual")) {
+                int rounds = Integer.parseInt(txtRounds.getText());
+                torneio = new TorneioIndividual(nome, prize, maxParticipants, rounds);
             } else {
-                torneio = new TorneioEquipe(nome, premio, maxParticipantes);
+                torneio = new TorneioEquipe(nome, prize, maxParticipants);
             }
 
             JOptionPane.showMessageDialog(this, "Torneio criado: " + torneio.getName());
             dispose();
         });
 
-        panel.add(lblTipo);
-        panel.add(tipoComboBox);
+        panel.add(lblType);
+        panel.add(typeComboBox);
         panel.add(lblNome);
         panel.add(txtNome);
-        panel.add(lblPremio);
-        panel.add(txtPremio);
-        panel.add(lblMaxParticipantes);
-        panel.add(txtMaxParticipantes);
-        panel.add(lblRodadas);
-        panel.add(txtRodadas);
+        panel.add(lblPrize);
+        panel.add(txtPrize);
+        panel.add(lblMaxParticipants);
+        panel.add(txtMaxParticipants);
+        panel.add(lblRounds);
+        panel.add(txtRounds);
         panel.add(new JLabel());
-        panel.add(btnCriar);
+        panel.add(btnCreate);
 
         setVisible(true);
     }

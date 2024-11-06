@@ -1,7 +1,7 @@
-package Interface;
+package StreetFighterFake.src.Interface;
 
-import Torneio.Torneio;
 import Personagem.Personagem;
+import StreetFighterFake.src.Torneio.Torneio;
 
 import javax.swing.*;
 import java.awt.*;

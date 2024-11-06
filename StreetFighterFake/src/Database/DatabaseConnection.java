@@ -1,4 +1,4 @@
-package Database;
+package StreetFighterFake.src.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

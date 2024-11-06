@@ -1,3 +1,5 @@
+package StreetFighterFake.src;
+
 import Interface.MenuPrincipal;
 
 public class StreetFighterFake {

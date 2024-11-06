@@ -1,6 +1,6 @@
-package Interface;
+package StreetFighterFake.src.Interface;
 
-import Torneio.TorneioIndividual;
+import StreetFighterFake.src.Torneio.TorneioIndividual;
 import Personagem.Personagem;
 
 import javax.swing.*;
@@ -21,9 +21,9 @@ public class RodadasMenu extends JFrame {
         txtArea.setEditable(false);
         panel.add(new JScrollPane(txtArea), BorderLayout.CENTER);
 
-        JButton btnIniciar = new JButton("Iniciar Rodadas");
+        JButton btnStart = new JButton("Iniciar Rodadas");
 
-        btnIniciar.addActionListener(e -> {
+        btnStart.addActionListener(e -> {
             txtArea.setText("Iniciando rodadas para o torneio " + torneio.getName() + "\n");
             for (int i = 0; i < torneio.getParticipants().size() - 1; i++) {
                 Personagem p1 = torneio.getParticipants().get(i);
@@ -36,7 +36,7 @@ public class RodadasMenu extends JFrame {
             txtArea.append("Vencedor do torneio: " + torneio.getParticipants().get(0).getName());
         });
 
-        panel.add(btnIniciar, BorderLayout.SOUTH);
+        panel.add(btnStart, BorderLayout.SOUTH);
 
         setVisible(true);
     }

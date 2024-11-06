@@ -1,8 +1,7 @@
-package Interface;
+package StreetFighterFake.src.Interface;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
 
 import Interface.AddParticipantMenu;
 
@@ -17,17 +16,17 @@ public class MenuPrincipal extends JFrame {
         getContentPane().add(panel);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JButton btnCriarTorneio = new JButton("Criar Novo Torneio");
-        JButton btnAdicionarParticipante = new JButton("Adicionar Participante");
-        JButton btnIniciarRodadas = new JButton("Iniciar Rodadas");
+        JButton btnCreateChampionship = new JButton("Criar Novo Torneio");
+        JButton btnAddParticipant = new JButton("Adicionar Participante");
+        JButton btnStartRounds = new JButton("Iniciar Rodadas");
 
-        btnCriarTorneio.addActionListener(e -> new TorneioMenu());
-        btnAdicionarParticipante.addActionListener(e -> new AddParticipantMenu());
-        btnIniciarRodadas.addActionListener(e -> new RodadasMenu());
+        btnCreateChampionship.addActionListener(e -> new TorneioMenu());
+        btnAddParticipant.addActionListener(e -> new AddParticipantMenu());
+        btnStartRounds.addActionListener(e -> new RodadasMenu());
 
-        panel.add(btnCriarTorneio);
-        panel.add(btnAdicionarParticipante);
-        panel.add(btnIniciarRodadas);
+        panel.add(btnCreateChampionship);
+        panel.add(btnAddParticipant);
+        panel.add(btnStartRounds);
 
         setVisible(true);
     }
