@@ -1,5 +1,7 @@
 package Personagem;
 
+import Tecnica.Tecnica;
+
 import java.util.ArrayList;
 
 public class Personagem {
@@ -24,31 +26,72 @@ public class Personagem {
     }
 
     public String getName() {
+
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
         return this.age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public int getStrength() {
+
         return this.strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
     public int getSpeed() {
         return this.speed;
     }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     public int getLife() {
+
         return this.life;
     }
 
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public int getMaxLife() {
+        return this.maxLife;
+    }
+
+    public void setMaxLife(int maxLife) {
+        this.maxLife = maxLife;
+    }
+
     public int getLevel() {
+
         return this.level;
     }
 
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public ArrayList<Tecnica.Tecnica> getTechniques() {
+
         return this.techniques;
+    }
+
+    public void setTechniques(ArrayList<Tecnica.Tecnica> techniques) {
+        this.techniques = techniques;
     }
 
     public void applyDamage(int damage) {
