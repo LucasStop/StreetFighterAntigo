@@ -1,4 +1,4 @@
-package StreetFighterFake.src.Torneio;
+package StreetFighter.src.Torneio;
 
 public interface TorneioInterface {
     void startTournament();

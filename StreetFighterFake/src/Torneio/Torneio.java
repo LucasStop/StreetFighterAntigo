@@ -1,4 +1,4 @@
-package StreetFighterFake.src.Torneio;
+package StreetFighter.src.Torneio;
 
 import Personagem.Personagem;
 import java.util.ArrayList;

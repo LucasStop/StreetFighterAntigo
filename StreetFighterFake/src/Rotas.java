@@ -1,4 +1,4 @@
-package StreetFighterFake.src;
+package StreetFighter.src;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Personagem.Personagem;
-import StreetFighterFake.src.Database.DatabaseConnection;
-import StreetFighterFake.src.Torneio.Torneio;
-import StreetFighterFake.src.Torneio.TorneioEquipe;
+import StreetFighter.src.Database.DatabaseConnection;
+import StreetFighter.src.Torneio.Torneio;
+import StreetFighter.src.Torneio.TorneioEquipe;
 import Torneio.TorneioIndividual;
 import Tecnica.Tecnica;
 
-public class Rotas {
+public class Routes {
 
     // CRUD para Personagem
     public static void criarPersonagem(int id, String nome, int forca) {

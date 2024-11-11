@@ -1,8 +1,8 @@
-package StreetFighterFake.src;
+package StreetFighter.src;
 
 import Interface.MenuPrincipal;
 
-public class StreetFighterFake {
+public class StreetFighter {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(() -> {
             MenuPrincipal menu = new MenuPrincipal();
